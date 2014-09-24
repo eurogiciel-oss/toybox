@@ -1,0 +1,45 @@
+<html><head><title>toybox current status</title>
+<!--#include file="header.html" -->
+<title>Toybox Status</title>
+
+<h1>How are we doing on implementing stuff so far?</h1>
+
+<p>Legend: [posix] &lt;lsb&gt; (development) {android} =klibc= #sash# @sbase@
+*beastiebox* +request+ other <strike>implemented</strike></p>
+
+<!--#include file="status.gen" -->
+
+<h1>The current status of toybox (as of 0.4.5 release):</h1>
+
+<h3><u>These commands are reasonably finished</u>:</h3>
+<blockquote><b>
+<span id=ready>
+basename cal cat catv chgrp chmod chown chvt cksum clear cmp comm count cp
+df dirname dmesg dos2unix echo egrep env false fgrep hostname grep groups
+killall link logname losetup ls lsmod md5sum mkdir mkfifo mkswap mktemp mv
+nice nohup od oneit paste pivot_root pmap pwd readahead realpath renice rev
+rm seq setsid sha1sum sleep sort split stat swapoff swapon sync tac taskset
+tee time timeout true truncate tty uniq unix2dos
+unlink usleep uudecode uuencode wc which whoami yes
+acpi blkid eject nl pwdx reboot su umount fstype halt poweroff
+</span>
+</b></blockquote>
+
+<h3><u>These commands are implemented but have pending todo items remaining:</u></h3>
+<blockquote><b>
+<span id=pending>
+bzcat bunzip2 chroot cut date du expand free head help hostname id ifconfig
+insmod kill ln login lsusb mdev
+mknod modinfo mountpoint nc netcat passwd patch pidof printenv readlink rmdir
+rmmod switch_root tail touch uname unshare uptime vconfig vmstat w who xargs
+</span>
+</b></blockquote>
+
+<h3><u>Work on these is underway, but not usable yet:</u></h3>
+<blockquote><b>
+bzip2 mke2fs more mount umount sed tar sh grep/egrep/fgrep
+</blockquote></b>
+
+<p>See <a href="todo.txt">the todo list</a> for details.</p>
+
+<!-- #include "footer.html" -->
