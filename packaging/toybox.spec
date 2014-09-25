@@ -12,17 +12,19 @@ Source1: config
 Toybox combines the most common Linux command line utilities together into a single BSD-licensed executable
 
 %prep
-cp %{SOURCE1} ./.config
 %autosetup
 
 %build
-make toybox %{?_smp_mflags}
+cp %{SOURCE1} ./.config
+make %{?_smp_mflags} toybox
 
 %install
-%make_install
-make install
+make PREFIX=./ install
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_sbindir}
+cp ./bin/* %{buildroot}%{_bindir}
+cp ./sbin/* %{buildroot}%{_sbindir}
 
 %files
-%doc
-
-%changelog
+%{_bindir}/*
+%{_sbindir}/*
