@@ -1,7 +1,7 @@
 Name: toybox
 Version: 0.4.9
 Release: 1%{?dist}
-Summary: ToyBox GNU Core utilities
+Summary: ToyBox Core utilities
 Group: Base/Utilities
 License: BSD-2-Clause-FreeBSD
 URL: http://landley.net/toybox/about.html
@@ -22,8 +22,8 @@ make %{?_smp_mflags} toybox
 make PREFIX=./ install
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_sbindir}
-cp ./bin/* %{buildroot}%{_bindir}
-cp ./sbin/* %{buildroot}%{_sbindir}
+cp --preserve=links ./bin/* %{buildroot}%{_bindir}
+cp --preserve=links ./sbin/* %{buildroot}%{_sbindir}
 
 %files
 %{_bindir}/*
